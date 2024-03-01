@@ -10,9 +10,13 @@
     };
 
     nur.url = "github:nix-community/NUR";
+
+    plasma-manager.url = "github:pjones/plasma-manager";
+    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
+    plasma-manager.inputs.home-manager.follows = "home-manager";
   };
 
-  outputs = { self, nixpkgs, home-manager, nur }:
+  outputs = { self, nixpkgs, home-manager, nur, plasma-manager }@inputs:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
@@ -26,6 +30,10 @@
         specialArgs = { inherit pkgs; };
         modules = [
           home-manager.nixosModules.home-manager
+          {
+            home-manager.extraSpecialArgs = { inherit inputs; };
+            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+          }
           nur.nixosModules.nur
           ./configuration.nix
         ];

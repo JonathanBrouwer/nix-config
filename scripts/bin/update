@@ -1,4 +1,5 @@
 #!/bin/sh
 cd $HOME/nix-config
+git pull
 nix flake update
 rebuild

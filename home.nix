@@ -57,4 +57,36 @@
     userName = "Jonathan Brouwer";
     userEmail = "jonathantbrouwer@gmail.com";
   };
+
+  qt = {
+    enable = true;
+    platformTheme = "kde";
+  };
+
+  programs.plasma = {
+    enable = true;
+    workspace = {
+      theme = "breeze-dark";
+      colorScheme = "BreezeDark";
+    };
+
+    kwin.titlebarButtons = {
+      right = [ "keep-above-windows" "minimize" "maximize" "close" ];
+    };
+
+#     spectacle.shortcuts = {
+#       captureActiveWindow = "Meta+Print";
+#       captureCurrentMonitor = "Print";
+#       captureEntireDesktop = "Shift+Print";
+#       captureRectangularRegion = "Meta+Shift+S";
+#       captureWindowUnderCursor = "Meta+Ctrl+Print";
+#       launch = "Meta+S";
+#       launchWithoutCapturing = "Meta+Alt+S";
+#     };
+  };
+
+
+
+
+
 }

@@ -87,8 +87,10 @@
   home-manager.useGlobalPkgs = true;
   home-manager.useUserPackages = true;
   home-manager.users.jonathan = { ... }: {
-    imports = [ ./home.nix ];
-    home.stateVersion = config.system.stateVersion;
+    imports = [
+      ./home.nix
+   ];
+   home.stateVersion = config.system.stateVersion;
   };
 
   # List packages installed in system profile. To search, run:
