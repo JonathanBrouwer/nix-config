@@ -21,7 +21,7 @@
     kate
     gimp
     vlc
-    (import ./scripts/rebuild.nix { inherit pkgs; })
+    (pkgs.buildEnv { name="my-scripts"; paths = [ ./scripts ]; })
   ];
 
   programs.home-manager.enable = true;

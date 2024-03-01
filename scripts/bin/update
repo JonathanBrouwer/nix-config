@@ -1,0 +1,4 @@
+#!/bin/sh
+cd $HOME/nix-config
+nix flake update
+rebuild
