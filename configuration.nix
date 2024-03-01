@@ -24,10 +24,6 @@
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
@@ -53,7 +49,10 @@
 
 
   # Enable the Plasma 5 Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm = {
+    enable = true;
+    wayland.enable = true;
+  };
   services.xserver.desktopManager.plasma6.enable = true;
   services.xserver.displayManager.defaultSession = "plasma";
 
@@ -83,7 +82,6 @@
   users.users.jonathan = {
     isNormalUser = true;
     extraGroups = [ "docker" "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [ firefox ];
   };
 
   home-manager.useGlobalPkgs = true;

@@ -11,7 +11,7 @@
     discord
     element-desktop
     git
-    plasma5Packages.kdeconnect-kde
+    kdePackages.kdeconnect-kde
     ripgrep
     cargo
     rustc
@@ -19,6 +19,9 @@
     vscode
     firefox
     kate
+    gimp
+    vlc
+    (import ./scripts/rebuild.nix { inherit pkgs; })
   ];
 
   programs.home-manager.enable = true;
