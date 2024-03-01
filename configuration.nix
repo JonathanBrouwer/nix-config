@@ -16,7 +16,7 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "jonathan-work"; # Define your hostname.
+  networking.hostName = "jonathan-laptop"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -83,10 +83,14 @@
   users.users.jonathan = {
     isNormalUser = true;
     extraGroups = [ "docker" "networkmanager" "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      firefox
-      kate
-    ];
+    packages = with pkgs; [ firefox ];
+  };
+
+  home-manager.useGlobalPkgs = true;
+  home-manager.useUserPackages = true;
+  home-manager.users.jonathan = { ... }: {
+    imports = [ ./home.nix ];
+    home.stateVersion = config.system.stateVersion;
   };
 
   # List packages installed in system profile. To search, run:
@@ -113,11 +117,6 @@
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
-
-  # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
-  system.copySystemConfiguration = true;
 
   nixpkgs.config.allowUnfree = true;  
 
