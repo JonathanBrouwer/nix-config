@@ -2,4 +2,5 @@
 cd $HOME/nix-config
 git pull
 nix flake update
+sudo nix-channel --update
 rebuild

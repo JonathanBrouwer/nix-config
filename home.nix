@@ -18,7 +18,6 @@
     spotify
     vscode
     firefox
-    kate
     gimp
     vlc
     (pkgs.buildEnv { name="my-scripts"; paths = [ ./scripts ]; })

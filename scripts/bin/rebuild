@@ -1,4 +1,4 @@
 #!/bin/sh
 cd $HOME/nix-config
 sudo nixos-rebuild switch --flake .#
-xdg-desktop-menu forceupdate
+# xdg-desktop-menu forceupdate
