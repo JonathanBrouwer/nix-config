@@ -15,11 +15,15 @@
     ripgrep
     cargo
     rustc
+    rustfmt
+    clippy
     spotify
     vscode
     firefox
     gimp
     vlc
+    jetbrains.rust-rover
+    desktop-file-utils
     (pkgs.buildEnv { name="my-scripts"; paths = [ ./scripts ]; })
   ];
 
