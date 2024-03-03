@@ -61,11 +61,11 @@
     userEmail = "jonathantbrouwer@gmail.com";
   };
 
-  qt = {
-    enable = true;
-    platformTheme = "kde";
-  };
-
+#   qt = {
+#     enable = true;
+#     platformTheme = "kde";
+#   };
+/*
   programs.plasma = {
     enable = true;
     workspace = {
@@ -75,7 +75,7 @@
 
     kwin.titlebarButtons = {
       right = [ "keep-above-windows" "minimize" "maximize" "close" ];
-    };
+    };*/
 
 #     spectacle.shortcuts = {
 #       captureActiveWindow = "Meta+Print";
@@ -86,7 +86,7 @@
 #       launch = "Meta+S";
 #       launchWithoutCapturing = "Meta+Alt+S";
 #     };
-  };
+#   };
 
 
 

@@ -32,7 +32,7 @@
           home-manager.nixosModules.home-manager
           {
             home-manager.extraSpecialArgs = { inherit inputs; };
-            home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
+#             home-manager.sharedModules = [ plasma-manager.homeManagerModules.plasma-manager ];
           }
           nur.nixosModules.nur
           ./configuration.nix
