@@ -97,6 +97,9 @@
   environment.systemPackages = with pkgs; [
     pkgs.displaylink
     kdePackages.ktexteditor
+    kdePackages.kcmutils
+    kdePackages.kglobalaccel
+    kdePackages.kglobalacceld
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
